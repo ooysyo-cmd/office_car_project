@@ -1,0 +1,16 @@
+camera:ros2 run orbbec_camera list_devices_node检查是否连接
+        ros2 launch orbbec_camera gemini_330_series.launch.py启动
+lidar:ros2 launch lslidar_driver lsn10p_launch.py 
+imu:ros2 launch hipnuc_imu imu_spec_msg.launch.py 
+编码器协方差：差分or 
+话题
+建图导航 use_sim_time:=false
+ros2 launch wheeltec_gps_driver wheeltec_nmea_driver.launch.py
+ros2 launch wheeltec_gps_driver nmea_gps_path.launch.py 
+
+
+
+
+http://t0.tianditu.gov.cn/img_w/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.
+0.0&LAYER=img&STYLE=default&TILEMATRIXSET=w&FORMAT=tiles&TILEMATRIX={level}&TIL
+EROW={x}&TILECOL={y}&tk=e5bcc9aa3ecfb47c6e6a70cc9fecfe54

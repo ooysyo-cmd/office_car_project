@@ -1,0 +1,47 @@
+slam_toolbox:
+  ros__parameters:
+    use_sim_time: true
+
+    # 运行模式: online_async 适合实时建图, 不需要 bag 文件
+    mode: "online_async"
+
+    # 坐标系
+    odom_frame: odom
+    map_frame: map
+    base_frame: base_footprint
+    scan_topic: /scan
+
+    # 地图参数
+    map_resolution: 0.05
+    map_start_pose: [0.0, 0.0, 0.0]
+    map_update_interval: 1.0
+    max_laser_range: 8.0
+    minimum_time_interval: 0.5
+
+    # 闭环检测
+    loop_search_maximum_distance: 2.0
+    loop_match_minimum_chain_size: 10
+    loop_match_maximum_variance_coarse: 3.0
+    loop_match_minimum_response_coarse: 0.35
+    loop_match_minimum_response_fine: 0.45
+
+    # 扫描匹配
+    minimum_travel_distance: 0.3
+    minimum_travel_heading: 0.2
+    scan_buffer_size: 20
+    scan_buffer_max_scan_dist: 10.0
+    link_match_minimum_response_fine: 0.1
+    do_loop_closing: true
+    link_scan_maximum_distance: 1.5
+
+    # 优化器
+    optimizer_type: "sparse_bundle_adjustment"
+    solver_type: "ceres"
+
+    # 调试
+    debug_logging: false
+    enable_interactive_mode: true
+    throttle_scans: 1
+    transform_timeout: 1.0
+    tf_buffer_duration: 60.
+    stack_size_to_use: 40000000

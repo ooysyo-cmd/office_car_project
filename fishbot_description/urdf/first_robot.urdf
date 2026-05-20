@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<robot name="first_robot">
+    <!-- 身体 -->
+    <link name="base_link">
+        <!-- 部件外观 -->
+        <visual>
+            <!-- 偏移旋转 -->
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <!-- 形状 -->
+            <geometry>
+                <!-- 圆柱 -->
+                <cylinder radius="0.10" length="0.12"/>
+            </geometry>
+            <!-- 颜色 -->
+            <material name="n">
+                <color rgba="1.0 1.0 1.0 0.5"/>
+            </material>
+        </visual>
+    </link>
+    <link name="imu_link">
+        <visual>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="0.02 0.02 0.02"/>
+            </geometry>
+            <material name="black">
+                <color rgba="0.0 0.0 0.0 0.5"/>
+            </material>
+        </visual>
+    </link>
+    <joint name="imu_joint" type="fixed">
+        <origin xyz="0.0 0.0 0.03" rpy="0.0 0.0 0.0"/>
+        <parent link="base_link"/>
+        <child link="imu_link"/>
+        <!-- 旋转 和 限制 目前用不到 -->
+        <axis xyz="0.0 0.0 0.0"/>
+        <limit lower="0.0" upper="0.0" effort="0.0" velocity="0.0"/>
+    </joint>
+</robot>
